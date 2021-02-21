@@ -30,22 +30,5 @@ Route::get('/', 'PrincipalController@principal');//O Laravel identifica isso com
 Route::get('/sobrenos', 'SobreNosController@sobrenos');
 Route::get('/contatos', 'ContatosController@contatos');
 
-
-//Para os parametros serem opcional coloque um ? na frente dele
-//como o parametro de mensagem 
-
-//Não é reconselhavel deixa como opcional varios parametros
-
-Route::get('contatos/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = "usuario não digitou mensagem nenhuma") 
-{
-    echo("teste $nome - $categoria - $assunto - $mensagem");
-});
-
-//Para tratarmos erros de tipagem do PHP podemos usar expressões regulares
-
-Route::get('contatos/{nome}/{idCategoria}', function(string $nome, int $valor ) 
-{
-    echo("teste $nome - $valor");
-})->where('idCategoria', '[0-9]+')->where('nome', '[A-Za-z]+');//Caso não for numero na variavel idCategoria o Framework Laravel vai idenficiar e vai lancar exceção 404
-//Caso não for Letras na variavel nome o Framework Laravel vai idenficiar e vai lancar exceção 404
+//Para testa saber as rotas configuradas usar o php artisan route:list
 
