@@ -61,3 +61,10 @@ Route::get("/rota2", function()
 //Esse Route::redirect é um rediecionamento atraves da rota
 
 
+//Caso o usuario vai para uma pagina 404 que não existe ele manda para outra pagina customizada
+Route::fallback(function () 
+{
+    echo 'A rota acessada não existe. <a href="'.route('site.index').'"> clique aqui para pagina inicial </a'; 
+    //é possivel definier essa pagina em um controller
+    //apenas passar o nome do controller inves da funcion
+});
