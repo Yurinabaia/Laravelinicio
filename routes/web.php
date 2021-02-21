@@ -21,21 +21,23 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', 'PrincipalController@principal');//O Laravel identifica isso como um controller
+
+//O name signinica criar uma nomeclatura para as rotas, isso quer dizer que dentro do laravel vamos usar esse name para definir a rota
+Route::get('/', 'PrincipalController@principal')->name('site.index');//O Laravel identifica isso como um controller
 //Para criar um controller use o codigo
 //O @ significa o nome da Action que vamos executar dentro do controller
 //codigo para o controller: php artisan make:controller PrincipalController 
-Route::get('/sobrenos', 'SobreNosController@sobrenos');
-Route::get('/contatos', 'ContatosController@contatos');
-Route::get('/login', function() { return "login";});
+Route::get('/sobrenos', 'SobreNosController@sobrenos')->name('site.sobrenos');
+Route::get('/contatos', 'ContatosController@contatos')->name('site.contatos');
+Route::get('/login', function() { return "login";})->name('site.login');
 
 
 //Para testa saber as rotas configuradas usar o php artisan route:list
 
 //Definido rotas sigilosas, onde o usuario precisa se autentica para entra na rota
 Route::prefix('/app')->group(function () {
-    Route::get('/clientes', function() {return "clientes";});
-    Route::get('/fornecedores', function() {return "fornecedores";});
-    Route::get('/produtos', function() {return ("produtos");});
+    Route::get('/clientes', function() {return "clientes";})->name('app.clientes');//apelido da rota, 
+    Route::get('/fornecedores', function() {return "fornecedores";})->name('app.fornecedores');
+    Route::get('/produtos', function() {return ("produtos");})->name('app.produtos');
 });
 
