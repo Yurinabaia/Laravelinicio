@@ -29,3 +29,14 @@ Route::get('/', 'PrincipalController@principal');//O Laravel identifica isso com
 
 Route::get('/sobrenos', 'SobreNosController@sobrenos');
 Route::get('/contatos', 'ContatosController@contatos');
+
+
+//Para os parametros serem opcional coloque um ? na frente dele
+//como o parametro de mensagem 
+
+//Não é reconselhavel deixa como opcional varios parametros
+
+Route::get('contatos/{nome}/{categoria}/{assunto}/{mensagem?}', function(string $nome, string $categoria, string $assunto, string $mensagem = "usuario não digitou mensagem nenhuma") 
+{
+    echo("teste $nome - $categoria - $assunto - $mensagem");
+});
