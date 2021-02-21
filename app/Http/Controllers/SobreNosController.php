@@ -9,6 +9,6 @@ class SobreNosController extends Controller
     //Action
     public function sobreNos( ) 
     {
-        echo ("Sobre nos");
+        return view('site.sobre-nos');//Entrando na View que criamos.
     }
 }

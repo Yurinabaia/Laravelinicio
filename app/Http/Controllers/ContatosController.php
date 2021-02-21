@@ -9,6 +9,6 @@ class ContatosController extends Controller
     //Action
     public function contatos() 
     {
-        echo ("contatos");
+        return view('site.contato');//Entrando na View que criamos.
     }
 }

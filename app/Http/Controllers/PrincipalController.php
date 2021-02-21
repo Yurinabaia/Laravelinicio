@@ -9,6 +9,6 @@ class PrincipalController extends Controller
     //Action seria funçao 
     public function principal() 
     {
-        echo ("Ola mundo");
+        return view('site.principal');//Entrando na View que criamos.
     }
 }
