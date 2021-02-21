@@ -40,3 +40,12 @@ Route::get('contatos/{nome}/{categoria}/{assunto}/{mensagem?}', function(string 
 {
     echo("teste $nome - $categoria - $assunto - $mensagem");
 });
+
+//Para tratarmos erros de tipagem do PHP podemos usar expressões regulares
+
+Route::get('contatos/{nome}/{idCategoria}', function(string $nome, int $valor ) 
+{
+    echo("teste $nome - $valor");
+})->where('idCategoria', '[0-9]+')->where('nome', '[A-Za-z]+');//Caso não for numero na variavel idCategoria o Framework Laravel vai idenficiar e vai lancar exceção 404
+//Caso não for Letras na variavel nome o Framework Laravel vai idenficiar e vai lancar exceção 404
+
