@@ -1,0 +1,24 @@
+Primeiramente devemos baixar o php na versao mais atual;
+Em seguida colar no disco local da seguinte forma: nome diretorio php-7.4.6
+dentro do diretorio php-7.4.6 extrair o php que vc baixou
+
+Depois disso vai em variaveis de ambiente, path e cole o caminho do disco local da pasta php-7.4.6
+C:\php-7.4.6
+
+Testa se deu certo, use no cmd php --version se aparece a versao de certo
+
+
+Segundo devemos baixar o composer e instalar ele
+Para isso faz uma copiar o php.ini-development para php.ini na pasta php-7.4.6
+depois disso instale o composer e pronto. 
+Teste no CMD composer --version
+
+
+Em seguida devemos iniciar o laravel
+
+codigo para iniciar o pojeto: composer create-project --prefer-dist laravel/laravel nomeDoSeuApp "7.0.0"//vesao
+
+
+Para iniciar o servidor usar o codigo, php artisan serve --port=8080
+
+
