@@ -16,19 +16,20 @@ echo 'teste';
 
 @php $i = 0 @endphp
 
-@while ($i < count($fornecedores))
+@foreach ( $fornecedores as $id => $fornecedor)
+    
 
 <!--@ dd($fornecedores) Printa array no navegador, apenas tire o espasso deixado @ junto com dd -->
-@isset($fornecedores)<!--Se a variavel for existe ele entra nessa condição, caso contraio não entra e nao dar erro -->
+@isset($fornecedor)<!--Se a variavel for existe ele entra nessa condição, caso contraio não entra e nao dar erro -->
         <br>
-        Fornecedores: {{ $fornecedores[$i]['nome'] }}
+        Fornecedores: {{ $fornecedor['nome'] }}
         <br>
-        Status: {{ $fornecedores[$i]['status'] }}
+        Status: {{ $fornecedor['status'] }}
         <br>
-        Cnpj: {{ $fornecedores[$i]['status'] ?? 'Dado não preenchido' }}
+        Cnpj: {{ $fornecedor['status'] ?? 'Dado não preenchido' }}
 
-        Telefone: ({{ $fornecedores[$i]['ddd'] ?? '' }}) ({{ $fornecedores[$i]['tel'] ?? '' }})
-        @switch($fornecedores[$i]['ddd'])
+        Telefone: ({{ $fornecedor['ddd'] ?? '' }}) ({{ $fornecedor['tel'] ?? '' }})
+        @switch($fornecedor['ddd'])
                 @case('11')
                     <h3> São paulo </h3>
                     @break
@@ -43,4 +44,4 @@ echo 'teste';
         @endswitch
 @endisset    
 @php $i++ @endphp
-@endwhile
+@endforeach
