@@ -21,12 +21,21 @@
 
 
 <!--@ dd($fornecedores) Printa array no navegador, apenas tire o espasso deixado @ junto com dd -->
+<br>
+Fornecedores: {{$fornecedores[0]['nome']}}
+<br>
+Status: {{$fornecedores[0]['status']}}
+<br>
 
-
-@if(count($fornecedores) > 0 && count($fornecedores) > 10) )
-    <h3> Possuir fornecedores </h3>
-@elseif(count($fornecedores) > 10))
-    <h3> Possuir mais de dez fornecedores </h3>
-@else 
-    <h3> Não possuir fornecedores </h3>
+@if(!$fornecedores[0]['status'] == 'S')
+    <h3> Fornecedor inativo </h3>
+@else
+    <h3> Fornecedor ativo </h3>
 @endif
+<br>
+@unless ($fornecedores[0]['status'] == 'S')<!--é o mesmo que o ! de negação -->
+<h3> Fornecedor inativo </h3>
+
+@endunless
+
+
