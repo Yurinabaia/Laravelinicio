@@ -16,7 +16,7 @@ echo 'teste';
 
 @php $i = 0 @endphp
 
-@foreach ( $fornecedores as $id => $fornecedor)
+@forelse ( $fornecedores as $id => $fornecedor)
     
 
 <!--@ dd($fornecedores) Printa array no navegador, apenas tire o espasso deixado @ junto com dd -->
@@ -42,6 +42,10 @@ echo 'teste';
                 @default
                     <h3> Estado não encontrado </h3>
         @endswitch
-@endisset    
+@endisset   
+@empty
+    Não tem forncedor cadastrado 
 @php $i++ @endphp
-@endforeach
+
+
+@endforelse
