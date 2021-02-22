@@ -22,7 +22,7 @@ echo 'teste';
     <br>
     Status: {{ $fornecedores[1]['status'] }}
     <br>
-    @isset($fornecedores[1]['cnpj'])
-        Cnpj: {{$fornecedores[1]['cnpj']}} 
-    @endisset
+    @empty($fornecedores[1]['cnpj'])
+        teste
+    @endempty
 @endisset
