@@ -22,7 +22,5 @@ echo 'teste';
     <br>
     Status: {{ $fornecedores[1]['status'] }}
     <br>
-    @empty($fornecedores[1]['cnpj'])
-        teste
-    @endempty
+    Cnpj: {{$fornecedores[1]['status'] ?? 'Dado não preenchido' }}
 @endisset
