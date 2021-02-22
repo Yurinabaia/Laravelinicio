@@ -14,9 +14,9 @@ echo 'teste';
     */
 @endphp
 
+@php $i = 0 @endphp
 
-
-@for ($i = 0; $i < count($fornecedores); $i++)
+@while ($i < count($fornecedores))
 
 <!--@ dd($fornecedores) Printa array no navegador, apenas tire o espasso deixado @ junto com dd -->
 @isset($fornecedores)<!--Se a variavel for existe ele entra nessa condição, caso contraio não entra e nao dar erro -->
@@ -41,5 +41,6 @@ echo 'teste';
                 @default
                     <h3> Estado não encontrado </h3>
         @endswitch
-@endisset
-@endfor
+@endisset    
+@php $i++ @endphp
+@endwhile
