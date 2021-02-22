@@ -1,41 +1,28 @@
 <h3> fornecedor </h3>
 
-{{--Comentarios fica o comentario que fica descartado pelo blade--}}
-<?='aqui é o mesmo que de cima' ?>
+{{-- Comentarios fica o comentario que fica descartado pelo blade --}}
+<?= 'aqui é o mesmo que de cima' ?>
 
 <!--CHAMANDO PHP ABAIXO -->
-@php 
-    echo('teste');
-    /*
-    if() 
+@php
+echo 'teste';
+/*
+    if(isset())//Retorna true caso a variavel estiver definidar 
     {
         
-    }elseif (condition) {
-        # code...
-    }
-    else {
-        # code...
-    }
+    } 
     */
 @endphp
 
 
 <!--@ dd($fornecedores) Printa array no navegador, apenas tire o espasso deixado @ junto com dd -->
-<br>
-Fornecedores: {{$fornecedores[0]['nome']}}
-<br>
-Status: {{$fornecedores[0]['status']}}
-<br>
-
-@if(!$fornecedores[0]['status'] == 'S')
-    <h3> Fornecedor inativo </h3>
-@else
-    <h3> Fornecedor ativo </h3>
-@endif
-<br>
-@unless ($fornecedores[0]['status'] == 'S')<!--é o mesmo que o ! de negação -->
-<h3> Fornecedor inativo </h3>
-
-@endunless
-
-
+@isset($fornecedores)<!--Se a variavel for existe ele entra nessa condição, caso contraio não entra e nao dar erro -->
+    <br>
+    Fornecedores: {{ $fornecedores[1]['nome'] }}
+    <br>
+    Status: {{ $fornecedores[1]['status'] }}
+    <br>
+    @isset($fornecedores[1]['cnpj'])
+        Cnpj: {{$fornecedores[1]['cnpj']}} 
+    @endisset
+@endisset
