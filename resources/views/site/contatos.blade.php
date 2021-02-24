@@ -11,7 +11,8 @@
 
         <div class="informacao-pagina">
             <div class="contato-principal">
-                <form action={{ route('contatos') }} method="GET">
+                <form action={{ route('contatos') }} method="POST">
+                    @csrf <!-- É PRECISO USAR O TOKEN csrf PARA PODE ENVIAR DADOS VIA POST -->
                     <input name="name" type="text" placeholder="Nome" class="borda-preta">
                     <br>
                     <input name="tel" type="text" placeholder="Telefone" class="borda-preta">

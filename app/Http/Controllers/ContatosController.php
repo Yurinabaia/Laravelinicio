@@ -9,7 +9,7 @@ class ContatosController extends Controller
     //
     public function contatos() 
     {
-        var_dump($_GET);
+        var_dump($_POST);
         return view("site.contatos");
     }
 }

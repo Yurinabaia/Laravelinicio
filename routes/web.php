@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', "PaginaPrincipalController@index")->name("index");
 Route::get('/about', "AboutController@about")->name("about");
 Route::get('/contatos', "ContatosController@contatos")->name("contatos");
+Route::post('/contatos', "ContatosController@contatos")->name("contatos");//EMVIADO VIA POST FORMULARIO
 Route::get('/login', "LoginController@login")->name("login");
 
 Route::prefix('/app')->group(function() 
