@@ -2,7 +2,9 @@
 
 @section('conteudoIndex')<!--Apelido da section PARA PASSA PARA base do html -->
     
+@section('titulo','Pagina Princiapl')<!-- forma de passar um section com uma variavel -->
 
+    
     <div class="topo">
 
         <div class="logo">

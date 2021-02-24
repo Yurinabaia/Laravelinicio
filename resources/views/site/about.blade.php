@@ -1,6 +1,8 @@
 @extends('site.layouts.base')<!-- base para HTML -->
 
 @section('conteudoAbout')<!--Apelido da section PARA PASSA PARA base do html -->
+@section('titulo','Sobre Nos') <!-- forma de passar um section com uma variavel -->
+
     <body>
         <div class="topo">
 
