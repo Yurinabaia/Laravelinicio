@@ -11,7 +11,8 @@
 
         <div class="informacao-pagina">
             <div class="contato-principal">
-                @component('site.layouts._components.formulario_contato') <!--Transformando formulario em uma view  dinamica -->
+                @component('site.layouts._components.formulario_contato', ['x' => 'borda-preta']) <!--Transformando formulario em uma view  dinamica -->
+                    <p>Nossa equipe ira atender em breve </p> <!--Enviado componentes via $slot -->
                 @endcomponent
             </div>
         </div>
