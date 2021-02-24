@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
 <body>
+    @include('site.layouts._partions.menu') <!-- Incluindo no menu de forma dinamica -->
+
     @yield('conteudoIndex') <!--Buscando do index para a secao conteudo que ele traz -->
     @yield('conteudoAbout')<!--Buscando do about para a secao conteudo que ele traz -->
     @yield('conteudoContatos')<!--Buscando do about para a secao conteudo que ele traz -->
